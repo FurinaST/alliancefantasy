@@ -1,6 +1,6 @@
 /*   STEP 1   */
 export const leagueID = "1047435618734850048"; // your league ID
-export const leagueName = "Alliance of Fantasy Football:  Champions League"; // your league name
+export const leagueName = "Alliance of Fantasy Football"; // your league name
 export const dues = 25; // (optional) used in template constitution page
 export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
 export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VITE_CONTENTFUL_SPACE environment variables
@@ -10,9 +10,7 @@ export const homepageText = `
   <p>The Alliance of Fantasy is a multi-league, multi-sport association that offers fantasy sports for over 80 unique franchises, spread all around the entire globe.  From the league's founding in 2021 by Kero and Furina, the AFF has aimed to expand each year to the scope it has to today.</p>
   <p>The AFF, or Alliance of Fantasy Football is the most popular and original sport that the Alliance has hosted, entering their 5th year of the Gridiron and 4th year of being a 16-man league format.  Using the Sleeper app, The AFF has grown from a 10-team, 1 league organization, to a 64-team, 4 league pyramid.</p>
   <p>In tandem with the AFF, the AA, or Alliance Association, also exists to run a domestic cup competition where all 64 teams are allowed to compete for the grand prize of a trophy and cash for their efforts.  These competitions exist as a complimenting co-existance to one another, and aim to create more opportunities for players to be engaged and competing on a week-to-week basis.</p>
-  <p>The ABA, or Alliance Basketball Association, is the Fantasy Basketball League that the Alliance offers for players who enjoy the Sleeper format of the game.  The inagural season is still underway, with the victor soon to be crowned in the coming months!</p>
-  <p>The APL, or Alliance Premier League, is the Fantasy Premier League (soccer) that is played on a much smaller scale to the AFF and ABA, with only a few members involved and a much less documented history/ruleset.  The inagural APL is still underway, similarly to the ABA.</p>
-  <p>Our history has only just begun, with a new chapter starting every single year.  We thank every manager who has been a part of the Alliance, as without the managers, the league wouldn't be where it is today.</p>
+  <p>The ABA, or Alliance Basketball Association, is the Fantasy Basketball League that the Alliance offers for players who enjoy the Sleeper format of the game.  The APL, or Alliance Premier League, is the Fantasy Premier League (soccer) that is played on a much smaller scale to the AFF and ABA, with only a few members involved.</p>
   <p>For any questions, concerns, or clarifications on the Alliance of Fantasy, please contact Furina on discord (username:  focalorsfurina) and you will get assistance.</p>
   <p>Check out our shop for official Alliance of Fantasy merchandise, including teams and league-wide apparel/gear!  Shop:  </p>
 `;
