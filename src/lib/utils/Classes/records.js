@@ -15,6 +15,8 @@ export class Records {
 		this.seasonLongPoints = []; // keeps track of season long points
 		this.allTimeMatchupDifferentials = []; // the difference in scores for every matchup (for all years combined)
 
+		this.allTimeBiggestBlowouts = [];
+		this.allTimeClosestMatchups = [];
 		this.leastSeasonLongPoints = [];
 		this.mostSeasonLongPoints = [];
 		this.leagueWeekLows = [];
@@ -42,6 +44,8 @@ Records.prototype.confirmManagerRecord = function(managerID) {
             fptsAgainst: 0,
             potentialPoints: 0,
             pOGames: 0,
+            byes: 0,
+            playoffAppearances: 0,
         }
     }
 }
@@ -140,6 +144,18 @@ Records.prototype.addLeagueWeekRecord = function(entry) {
     this.leagueWeekRecords.push(entry);
 }
 
+
+/**
+ * Add matchupDifferentials to the allTimeMatchupDifferentials array.
+ * 
+ * The allTimeMatchupDifferentials is used to compute the biggest blowouts and narrowest victories of all-time.
+ * @param {Object[]} matchupDifferentials
+ */
+Records.prototype.addAllTimeMatchupDifferentials = function(matchupDifferentials) {
+    this.allTimeMatchupDifferentials = this.allTimeMatchupDifferentials.concat(matchupDifferentials);
+}
+
+
 /**
  * Adds an entry to the seasonWeekRecords array.
  * 
@@ -151,6 +167,33 @@ Records.prototype.addSeasonWeekRecord = function(entry) {
     this.seasonWeekRecords.push(entry)
 }
 
+/**
+ * Once all data has been gathered, finalizeAllTimeRecords will compute the allTimeBiggestBlowouts, allTimeClosestMatchups,
+ * leagueWeekHighs, leagueWeekLows, mostSeasonLongPoints, and leastSeasonLongPoints as well as adding the current season managers,
+ * currentYear, and lastYear to the records Class
+ * @param {int} currentYear
+ * @param {int} lastYear
+ */
+ Records.prototype.finalizeAllTimeRecords = function({currentYear, lastYear}) {
+    // sort allTimeMatchupDifferentials and return the biggest blowouts and narrowest victories
+    const [allTimeBiggestBlowouts, allTimeClosestMatchups] = sortHighAndLow(this.allTimeMatchupDifferentials, 'differential')
+    this.allTimeBiggestBlowouts = allTimeBiggestBlowouts;
+    this.allTimeClosestMatchups = allTimeClosestMatchups;
+
+    // sort leagueWeekRecords and return the highest weekly scores and lowest weekly scores
+    const [leagueWeekHighs, leagueWeekLows] = sortHighAndLow(this.leagueWeekRecords, 'fpts')
+    this.leagueWeekHighs = leagueWeekHighs;
+    this.leagueWeekLows = leagueWeekLows;
+
+    // sort seasonLongPoints and return the highest season-long scores and lowest season-long scores
+    const [mostSeasonLongPoints, leastSeasonLongPoints] = sortHighAndLow(this.seasonLongPoints, 'fptsPerGame')
+    this.mostSeasonLongPoints = mostSeasonLongPoints;
+    this.leastSeasonLongPoints = leastSeasonLongPoints;
+
+    this.currentYear = currentYear;
+    this.lastYear = lastYear;
+}
+
 
 /**
  * Returns an object with the data needed to build the records page
@@ -158,6 +201,8 @@ Records.prototype.addSeasonWeekRecord = function(entry) {
  */
 Records.prototype.returnRecords = function() {
     return {
+        allTimeBiggestBlowouts: this.allTimeBiggestBlowouts,
+        allTimeClosestMatchups: this.allTimeClosestMatchups,
         leastSeasonLongPoints: this.leastSeasonLongPoints,
         mostSeasonLongPoints: this.mostSeasonLongPoints,
         leagueWeekLows: this.leagueWeekLows,
