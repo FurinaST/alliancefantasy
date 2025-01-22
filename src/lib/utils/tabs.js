@@ -17,11 +17,6 @@ export const tabs = [
         dest: '/transactions',
     },
     {
-        icon: 'article',
-        label: 'Blog',
-        dest: '/blog',
-    },
-    {
         icon: 'view_comfy',
         label: 'League Info',
         nest: true,
@@ -50,21 +45,6 @@ export const tabs = [
                 icon: 'view_comfy',
                 label: 'Drafts',
                 dest: '/drafts',
-            },
-            {
-                icon: 'emoji_events',
-                label: 'Trophy Room',
-                dest: '/awards',
-            },
-            {
-                icon: 'military_tech',
-                label: 'Records',
-                dest: '/records',
-            },
-            {
-                icon: 'history_edu',
-                label: 'Constitution',
-                dest: '/constitution',
             },
             {
                 icon: 'sports_football',
