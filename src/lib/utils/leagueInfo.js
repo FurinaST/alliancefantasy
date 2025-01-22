@@ -13,8 +13,8 @@ export const homepageText = `
   <p>The ABA, or Alliance Basketball Association, is the Fantasy Basketball League that the Alliance offers for players who enjoy the Sleeper format of the game.  The APL, or Alliance Premier League, is the Fantasy Premier League (soccer) that is played on a much smaller scale to the AFF and ABA, with only a few members involved.</p>
   <p>Please contact Furina (discord:  focalorsfurina) for any questions or concerns.</p>
   <p>Check out our shop for official Alliance of Fantasy and AFF team merchandise!  Also, join our discord!</p>
-  <p>https://discord.gg/alliancefantasy</p>
-  <p>https://www.redbubble.com/people/AllianceFantasy/shop</p>
+  <p><a href="https://discord.gg/alliancefantasy">Discord</a></p>
+  <p><a href="https://www.redbubble.com/people/AllianceFantasy/shop">Shop</a></p>
 `;
 
 /*   STEP 3   */
