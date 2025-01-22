@@ -47,6 +47,11 @@ export const tabs = [
                 dest: '/drafts',
             },
             {
+                icon: 'military_tech',
+                label: 'Records',
+                dest: '/records',
+            },
+            {
                 icon: 'sports_football',
                 label: 'Go to Sleeper',
                 dest: `https://sleeper.app/leagues/${leagueID}`,
