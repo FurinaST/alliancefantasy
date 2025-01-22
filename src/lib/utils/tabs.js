@@ -27,11 +27,6 @@ export const tabs = [
                 dest: '/rosters',
             },
             {
-                icon: 'groups',
-                label: 'Managers',
-                dest: '/managers',
-            },
-            {
                 icon: 'local_fire_department',
                 label: 'Rivalry',
                 dest: '/rivalry',
